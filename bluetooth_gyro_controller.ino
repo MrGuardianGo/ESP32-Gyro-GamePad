@@ -1,6 +1,4 @@
-// // (c) Michael Schoeffler 2017, http://www.mschoeffler.de
-
-#include "Wire.h"  // This library allows you to communicate with I2C devices.
+#include "Wire.h" 
 #include <BleGamepad.h>
 
 BleGamepad bleGamepad("ESP32 BLE Gamepad", "One Man Hit Parade", 100);
@@ -29,19 +27,9 @@ int xAxis = 32736 / 2;
 #define SDA_PIN 26
 #define SCL_PIN 25
 
-unsigned long accelStartTime = 0;
-bool accelRamping = false;
-
-unsigned long brakeStartTime = 0;
-bool brakeRamping = false;
-
-const unsigned long rampDuration = 1000;
-
 const int MPU_ADDR = 0x68;
 
-int16_t accelerometer_x, accelerometer_y, accelerometer_z;
-int16_t gyro_x, gyro_y, gyro_z;
-int16_t temperature;
+int16_t accelerometer_x, accelerometer_y;
 
 char tmp_str[7]; 
 
